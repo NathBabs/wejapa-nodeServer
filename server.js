@@ -1,0 +1,19 @@
+var http = require('http'); 
+
+// Create a server object 
+http.createServer(function (req, res) { 
+	
+	// http header 
+	res.writeHead(200, {'Content-Type': 'text/html'}); 
+	
+	var url = req.url; 
+	
+	if(url ==='/') { 
+		res.write('Hello World, welcome to WeJapa Internships'); 
+		res.end(); 
+	} 
+}).listen(3000, function() { 
+	
+	// The server object listens on port 3000 
+	console.log("server start at port 3000"); 
+}); 
